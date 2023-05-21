@@ -28,6 +28,8 @@ function clicado(elemento) {
 function desclicado(elemento) {
     elemento.classList.remove('clicado')
     console.log(conta)
+
+    if(resultado.innerHTML.length >= 12){resultado.classList.add('grande')}else{resultado.classList.remove('grande')}
 }
 
 function calc(arrayConta) {
@@ -90,11 +92,11 @@ botaoFuncoes.forEach((botao, index) => {
         case 0:
 
             botao.addEventListener('mousedown', () => {
-                botao.classList.add('clicado')
+                clicado(botao)
             })
         
             botao.addEventListener('mouseup', () => {
-                botao.classList.remove('clicado')
+                desclicado(botao)
             })
             
             break;
@@ -102,7 +104,7 @@ botaoFuncoes.forEach((botao, index) => {
         case 1:
 
             botao.addEventListener('mousedown', () => {
-                botao.classList.add('clicado')
+                clicado(botao)
                 resultado.innerHTML = ''
                 calculo.innerHTML = ''
                 valorAtual = ''
@@ -110,7 +112,7 @@ botaoFuncoes.forEach((botao, index) => {
             })
         
             botao.addEventListener('mouseup', () => {
-                botao.classList.remove('clicado')
+                desclicado(botao)
             })
 
             break;
@@ -118,11 +120,11 @@ botaoFuncoes.forEach((botao, index) => {
         case 2:
 
             botao.addEventListener('mousedown', () => {
-                botao.classList.add('clicado')
+                clicado(botao)
             })
         
             botao.addEventListener('mouseup', () => {
-                botao.classList.remove('clicado')
+                desclicado(botao)
             })
 
             break;
