@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 
     <title>Calculadora</title>
 
@@ -19,7 +20,12 @@
     <main>
         <header class="tela">
             <span class="calculo"></span>
-            <div><span>=</span><span class="resultado"></span></div>
+            <div>
+                <span>=</span>
+                <div class="boxResultado">
+                    <span class="resultado grande"></span>
+                </div>
+            </div>
         </header>
         <div class="teclas">
             <ul class="funcoes">
@@ -41,14 +47,14 @@
 
                 <li class="botaoPolaridade">+/-</li>
                 <li class="botao">0</li>
-                <li class="botao">,</li>
+                <li class="botao">.</li>
             </ul>
 
             <ul class="operadores">
-                <li class="botao">/</li>
-                <li class="botao">X</li>
-                <li class="botao">-</li>
-                <li class="botao">+</li>
+                <li class="botaoOperadores">/</li>
+                <li class="botaoOperadores">X</li>
+                <li class="botaoOperadores">-</li>
+                <li class="botaoOperadores">+</li>
                 <li class="botaoResultado">=</li>
             </ul>
         </div>
