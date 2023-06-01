@@ -27,43 +27,62 @@ function clicado(elemento) {
 
 function desclicado(elemento) {
     elemento.classList.remove('clicado')
-    console.log(conta)
 
     if(resultado.innerHTML.length >= 12){resultado.classList.add('grande')}else{resultado.classList.remove('grande')}
+
+    console.log(`[${conta}] length: (${conta.length})`)
 }
 
 function calc(arrayConta) {
     
-    arrayConta.forEach((valor, index) => {
+    let index = 0
 
-        if (arrayConta.length == 1){
-            console.log('primeiro if')
-            return arrayConta[0]
-        }else if (valor == 'X') {
+    while (arrayConta.length > 1) {
+        
+        let valor = arrayConta[index]
+        
+        if (valor == 'X') {
+
             let mutiplicar = arrayConta[index - 1] * arrayConta[index + 1]
             arrayConta.splice((index-1), 3, mutiplicar)
 
-            console.log('mutiplicando...')
+            index = 0
         }
         else if(valor == '/'){
+
             let dividir = arrayConta[index - 1] / arrayConta[index + 1]
             arrayConta.splice((index-1), 3, dividir)
-            console.log('dividindo...')
+
+            index = 0
         }
         else if(valor == '-'){
+
             let subtrair = parseFloat(arrayConta[index - 1]) - parseFloat(arrayConta[index + 1])
             arrayConta.splice((index-1), 3, subtrair)
-            console.log('subtraindo...')
+
+            index = 0
         }
         else if(valor == '+'){
-            // index = arrayConta.indexOf(valor)
+
             let somar = parseFloat(arrayConta[index - 1]) + parseFloat(arrayConta[index + 1])
             arrayConta.splice((index-1), 3, somar)
-            console.log('somando...')
+
+            index = 0
         }
 
-    })
-    return arrayConta[0]
+        console.log(`[${arrayConta}] length: (${arrayConta.length})`)
+
+        index += 1
+
+        if (index > 1000) {
+            break
+        }
+
+    }
+
+    if (arrayConta.length == 1){
+        return arrayConta[0]
+    }
 }
 
 botoes.forEach(botao => {
